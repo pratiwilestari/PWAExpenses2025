@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Google Sheets</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <h1>PWA - Google Sheets</h1>
+    <form id="dataForm">
+        <input type="text" id="nama" placeholder="Nama" required>
+        <input type="text" id="catatan" placeholder="Catatan" required>
+        <button type="submit">Kirim</button>
+    </form>
+    <p id="status"></p>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+                .then(() => console.log("Service Worker Registered"));
+        }
+    </script>
+</body>
+</html>
